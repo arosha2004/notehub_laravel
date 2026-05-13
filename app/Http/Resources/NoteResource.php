@@ -15,11 +15,11 @@ class NoteResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'title' => $this->title,
-            'content' => $this->content,
-            'is_favorite' => $this->is_favorite,
-            'category' => new CategoryResource($this->whenLoaded('category')),
+            'id'         => $this->id,
+            'title'      => $this->title,
+            'content'    => $this->content,
+            'is_favorite'=> $this->is_favorite,
+            'category'   => new CategoryResource($this->whenLoaded('category')),
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
