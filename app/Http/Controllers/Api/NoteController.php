@@ -53,6 +53,8 @@ class NoteController extends Controller
             'content' => 'nullable|string',
             'category_id' => 'nullable|exists:categories,id',
             'is_favorite' => 'boolean',
+            'reminder_at' => 'nullable|date',
+            'reminder_completed' => 'boolean',
         ]);
 
         $note = $request->user()->notes()->create($validated);
@@ -82,6 +84,8 @@ class NoteController extends Controller
             'content' => 'nullable|string',
             'category_id' => 'nullable|exists:categories,id',
             'is_favorite' => 'boolean',
+            'reminder_at' => 'nullable|date',
+            'reminder_completed' => 'boolean',
         ]);
 
         // Save version if content changes
